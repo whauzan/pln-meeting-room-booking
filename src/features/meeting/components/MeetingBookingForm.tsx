@@ -27,6 +27,12 @@ import { Checkbox } from "../../../shared/components/ui/checkbox";
 import { DatePickerField } from "../../../shared/components/ui/date-picker";
 import { cn } from "../../../shared/lib/utils";
 
+const getTodayStartOfDay = (): Date => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+};
+
 export const MeetingBookingForm = () => {
   const form = useForm<MeetingFormData>({
     resolver: zodResolver(meetingFormSchema),
@@ -210,7 +216,7 @@ export const MeetingBookingForm = () => {
                 if (date) form.setValue("tanggalRapat", date);
               }}
               placeholder="28 Juni 2022"
-              minDate={new Date()} // Prevent past dates
+              minDate={getTodayStartOfDay()} // Prevent past dates
               error={form.formState.errors.tanggalRapat?.message}
             />
             {form.formState.errors.tanggalRapat && (

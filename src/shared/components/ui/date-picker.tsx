@@ -20,6 +20,13 @@ interface DatePickerProps {
   maxDate?: Date;
 }
 
+// Helper function to normalize date to start of day
+const normalizeDate = (date: Date): Date => {
+  const normalized = new Date(date);
+  normalized.setHours(0, 0, 0, 0);
+  return normalized;
+};
+
 export function DatePicker({
   date,
   onDateChange,
@@ -35,6 +42,10 @@ export function DatePicker({
     onDateChange?.(selectedDate);
     setOpen(false);
   };
+
+  // Normalize minDate and maxDate to avoid time comparison issues
+  const normalizedMinDate = minDate ? normalizeDate(minDate) : undefined;
+  const normalizedMaxDate = maxDate ? normalizeDate(maxDate) : undefined;
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -63,8 +74,18 @@ export function DatePicker({
           selected={date}
           onSelect={handleDateSelect}
           disabled={(date) => {
-            if (minDate && date < minDate) return true;
-            if (maxDate && date > maxDate) return true;
+            const normalizedDate = normalizeDate(date);
+
+            // Check if date is before minimum date
+            if (normalizedMinDate && normalizedDate < normalizedMinDate) {
+              return true;
+            }
+
+            // Check if date is after maximum date
+            if (normalizedMaxDate && normalizedDate > normalizedMaxDate) {
+              return true;
+            }
+
             return false;
           }}
           initialFocus

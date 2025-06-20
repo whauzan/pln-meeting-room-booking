@@ -76,7 +76,7 @@ function Calendar({
           defaultClassNames.day
         ),
         today: cn(
-          "bg-gray-100 text-gray-900 font-medium",
+          "bg-gray-100 text-gray-900 font-medium rounded-lg",
           defaultClassNames.today
         ),
         outside: cn("text-gray-400 opacity-50", defaultClassNames.outside),

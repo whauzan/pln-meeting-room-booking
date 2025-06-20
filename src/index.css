@@ -14,3 +14,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@theme {
+  --color-background: rgba(rgba(254, 254, 254, 1));
+  --color-primary: rgba(74, 131, 148, 1);
+  --color-primary-hover: rgba(64,116,132,1);
+  --color-text: rgba(51, 51, 51, 1);
+  --shadow-sidebar: 4px 0px 20px 0px rgba(106, 106, 106, 0.1);
+}
+
+.bg-background-nav {
+  background: linear-gradient(89.98deg, #18A2BA 14.11%, #296377 86.26%);
+}

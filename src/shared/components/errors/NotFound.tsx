@@ -1,9 +1,10 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowLeft, Home } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export default function NotFound() {
   return (
-    <div className="min-h-dvh flex items-center justify-center">
+    <div className="h-full flex items-center justify-center">
       <div className="max-w-md w-full text-center flex flex-col gap-4">
         <div className="flex flex-col gap-6">
           <div className="w-24 h-24 flex items-center justify-center mx-auto">
@@ -25,19 +26,19 @@ export default function NotFound() {
 
         <div className="flex flex-col items-center gap-4">
           <Link to="/dashboard">
-            <button className="px-4 py-2 cursor-pointer rounded-lg bg-[#05ADEE] hover:bg-[#05ADEE]/70 text-white flex items-center justify-center">
+            <Button variant="primary">
               <Home className="w-4 h-4 mr-2" />
               Kembali ke Dashboard
-            </button>
+            </Button>
           </Link>
 
-          <button
+          <Button
+            variant="outline"
             onClick={() => window.history.back()}
-            className="px-4 py-2 cursor-pointer rounded-lg border border-[#05ADEE] hover:bg-[#05ADEE]/75 hover:text-white transition-colors flex items-center"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Kembali ke Halaman Sebelumnya
-          </button>
+          </Button>
         </div>
       </div>
     </div>

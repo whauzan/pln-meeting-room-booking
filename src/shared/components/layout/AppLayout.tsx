@@ -7,17 +7,17 @@ interface AppLayoutProps {
 
 export default function AppLayout({children}: AppLayoutProps) {
   return (
-    <div className="bg-background min-h-dvh">
+    <div className="bg-background min-h-dvh flex flex-col">
       {/* Header */}
       <Header />
 
       {/* Main container with sidebar and content */}
-      <div className="flex">
+      <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <Sidebar />
 
         {/* Main content area */}
-        <main className="flex-1 min-h-[calc(100dvh-64px)]">{children}</main>
+        <main className="ml-[72px] pt-16 min-h-screen flex-1">{children}</main>
       </div>
     </div>
   );

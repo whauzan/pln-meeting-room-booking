@@ -2,7 +2,7 @@ import { Bell, ChevronDown } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-background-nav text-white px-6 py-2 flex justify-between items-center h-16 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background-nav text-white px-6 py-2 flex justify-between items-center h-16 shadow-sm">
       {/* Left side - Logo and app name */}
       <div className="flex items-center gap-5">
         <div className="flex items-center justify-center w-[38px] h-[52px]">

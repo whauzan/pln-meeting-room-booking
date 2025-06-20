@@ -19,7 +19,7 @@ export default function Sidebar() {
   const router = useRouterState();
   const currentPath = router.location.pathname;
   return (
-    <aside className="w-18 bg-white shadow-sidebar min-h-[calc(100vh-64px)]">
+    <aside className="fixed left-0 top-16 z-40 w-[72px] bg-white shadow-sidebar h-[calc(100vh-4rem)]">
       <nav className="px-4 py-5">
         <ul className="flex flex-col gap-3">
           {navigationItems.map((item) => {

@@ -51,9 +51,6 @@ export const DashboardPage = () => {
   const groupedData = dashboardData ? groupDataByUnit(dashboardData) : {};
   const unitNames = Object.keys(groupedData);
 
-  console.log("data", dashboardData);
-  console.log("grouped data", groupedData);
-
   if (periodsError) {
     return (
       <div className="p-6">

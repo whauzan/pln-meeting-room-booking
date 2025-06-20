@@ -1,5 +1,10 @@
-import { createRootRoute, Outlet, redirect } from "@tanstack/react-router";
+import {
+  createRootRoute,
+  Outlet,
+  redirect,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import NotFound from "../shared/components/errors/NotFound";
 
 export const Route = createRootRoute({
   beforeLoad: ({ location }) => {
@@ -15,4 +20,5 @@ export const Route = createRootRoute({
       <TanStackRouterDevtools />
     </>
   ),
+  notFoundComponent: NotFound,
 });
